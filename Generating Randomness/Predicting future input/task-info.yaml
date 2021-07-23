@@ -97,5 +97,8 @@ files:
     \n\nif __name__ == '__main__':\n    GenRandTest('predictor.predictor').run_tests()\n"
   learner_created: false
 feedback_link: https://hyperskill.org/projects/156/stages/815/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 23 Jul 2021 22:39:38 UTC
 record: -1

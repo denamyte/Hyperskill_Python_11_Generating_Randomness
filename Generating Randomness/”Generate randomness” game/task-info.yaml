@@ -86,22 +86,18 @@ files:
     \ \\\"{}\\\" of your output is supposed to contain instructions in the form {}\"\
     .format(\n                    final_instruction, INSTRUCTION)\n            )\n\
     \n        cap = 1000\n        for iter in range(game_iterations):\n          \
-    \  \n            start_ind = -2 - game_iterations * 5\n            instructions\
-    \ = strings[start_ind + iter * 5]\n            prediction_declaration = strings[start_ind\
-    \ + iter * 5 + 1]\n            prediction = strings[start_ind + iter * 5 + 2]\n\
-    \            result = strings[start_ind + iter * 5 + 3]\n            capital_info\
-    \ = strings[start_ind + iter * 5 + 4]\n            capital_info = capital_info.strip('.')\n\
-    \            capital_info = capital_info.strip(' ')\n\n            if INSTRUCTION.lower()\
-    \ not in instructions.lower():\n                return CheckResult.wrong(\n  \
-    \                  \"The string \\\"{}\\\" of your output is supposed to contain\
-    \ instructions in the form {}\".format(\n                        instructions,\
-    \ INSTRUCTION)\n                )\n\n            \n            if '(' not in result\
-    \ or ')' not in result:\n                return CheckResult.wrong(\"The last line\
-    \ of your output is supposed \"\n                                         \"to\
-    \ contain the percentage of correct guesses.\\n\"\n                          \
-    \               \"This number should be put in parentheses.\")\n            percentage\
-    \ = result[result.index('(') + 1:result.index(')')].replace('%', '').replace('\
-    \ ', '')\n            if '.' in percentage:\n                percentage = percentage[:percentage.index('.')]\n\
+    \  \n            start_ind = -2 - game_iterations * 5\n            prediction_declaration\
+    \ = strings[start_ind + iter * 5 + 1]\n            prediction = strings[start_ind\
+    \ + iter * 5 + 2]\n            result = strings[start_ind + iter * 5 + 3]\n  \
+    \          capital_info = strings[start_ind + iter * 5 + 4]\n            capital_info\
+    \ = capital_info.strip('.')\n            capital_info = capital_info.strip(' ')\n\
+    \            \n            if '(' not in result or ')' not in result:\n      \
+    \          return CheckResult.wrong(\"The last line of your output is supposed\
+    \ \"\n                                         \"to contain the percentage of\
+    \ correct guesses.\\n\"\n                                         \"This number\
+    \ should be put in parentheses.\")\n            percentage = result[result.index('(')\
+    \ + 1:result.index(')')].replace('%', '').replace(' ', '')\n            if '.'\
+    \ in percentage:\n                percentage = percentage[:percentage.index('.')]\n\
     \n            if 'prediction' not in prediction_declaration.lower():\n       \
     \         return CheckResult.wrong(\"Please use the word \\\"prediction\\\" in\
     \ a line before the predictor output\")\n\n            if len(prediction) != correct_len:\n\
