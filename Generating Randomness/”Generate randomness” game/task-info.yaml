@@ -141,5 +141,9 @@ files:
     \n\nif __name__ == '__main__':\n    GenRandTest('predictor.predictor').run_tests()\n"
   learner_created: false
 feedback_link: https://hyperskill.org/projects/156/stages/816/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">JetBrains
+    Academy</a> to continue learning.
+  time: Sun, 25 Jul 2021 22:06:20 UTC
 record: -1
